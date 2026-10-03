@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Good Goods | Everyday essentials</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0b1018;
+      --panel: #121a25;
+      --panel-2: #182332;
+      --line: #273649;
+      --text: #e5edf5;
+      --muted: #91a2b5;
+      --green: #69e0b2;
+      --blue: #8abaff;
+      --amber: #f5c56b;
+      --red: #ff8585;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(ellipse at 75% -10%, #1a3341 0, transparent 38rem),
+        var(--bg);
+      color: var(--text);
+      font: 15px/1.55 "Segoe UI", system-ui, sans-serif;
+    }
+
+    button, input { font: inherit; }
+
+    .wrap { width: min(1120px, calc(100% - 36px)); margin: 0 auto; }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: .02em; }
+    .brand-mark {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      border: 1px solid #357a68;
+      border-radius: 10px;
+      color: var(--green);
+      background: #10251f;
+    }
+
+    main { padding: 0 0 60px; }
+    .eyebrow { color: var(--green); font-size: 12px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+    h1 { margin: 8px 0 10px; font-size: clamp(30px, 5vw, 48px); line-height: 1.1; letter-spacing: -.04em; }
+    .intro { max-width: 680px; margin: 0; color: var(--muted); }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: end;
+      justify-content: space-between;
+      gap: 14px;
+      margin: 30px 0 16px;
+    }
+    .toolbar h2 { margin: 0; font-size: 20px; }
+    .filter { display: flex; align-items: center; gap: 10px; color: var(--muted); font-size: 13px; }
+    .filter input {
+      width: min(240px, 50vw);
+      padding: 9px 11px;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      outline: none;
+      background: var(--panel);
+      color: var(--text);
+    }
+    .filter input:focus { border-color: var(--blue); }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 14px; }
+    button:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+
+    :root {
+      color-scheme: light;
+      --bg: #fbf9f5;
+      --panel: #fff;
+      --panel-2: #f4f0e8;
+      --line: #e8e2d8;
+      --text: #27291f;
+      --muted: #77786e;
+      --green: #32634a;
+      --blue: #567763;
+      --amber: #f5c56b;
+      --red: #b84436;
+    }
+
+    body { background: var(--bg); color: var(--text); }
+    .wrap { width: min(1180px, calc(100% - 40px)); }
+    header { padding: 17px 0; border-bottom-color: var(--line); }
+    .brand { color: #292c23; font-size: 18px; }
+    .brand-mark { border: 0; border-radius: 50%; background: #e8eee4; color: #32634a; }
+    .status { padding: 7px 10px; border: 1px solid var(--line); border-radius: 20px; background: #fff; font-size: 11px; }
+    .dot { flex: 0 0 auto; }
+    main { padding: 0 0 60px; }
+    .shop-nav { display: flex; align-items: center; gap: 24px; }
+    .shop-nav a { color: #55574e; text-decoration: none; font-size: 13px; }
+    .shop-nav a:hover { color: #32634a; }
+    .cart-button {
+      padding: 9px 13px;
+      border: 1px solid #d8ded3;
+      border-radius: 7px;
+      background: #fff;
+      color: #344b38;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 650;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: center;
+      gap: 28px;
+      margin: 30px 0 34px;
+      padding: clamp(24px, 5vw, 58px);
+      overflow: hidden;
+      border: 1px solid #eee6d9;
+      border-radius: 17px;
+      background: linear-gradient(110deg, #f3eee4, #e6eddf);
+    }
+    .hero .eyebrow { color: #567763; }
+    .hero h1 { max-width: 510px; margin: 8px 0 13px; color: #2c3429; font-size: clamp(34px, 5vw, 54px); }
+    .hero-copy { max-width: 470px; color: #65685d; }
+    .hero-art { display: grid; min-height: 200px; place-items: center; font-size: clamp(90px, 18vw, 170px); }
+    .shop-cta {
+      display: inline-block;
+      margin-top: 9px;
+      padding: 11px 17px;
+      border-radius: 7px;
+      background: #32634a;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 650;
+      text-decoration: none;
+    }
+    .shop-toolbar { align-items: center; }
+    .shop-toolbar h2 { font-size: 23px; }
+    .filter input { border-color: var(--line); background: #fff; color: var(--text); }
+    .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 17px; }
+    .product-card { overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: #fff; }
+    .product-art { display: grid; min-height: 175px; place-items: center; background: #f0eee7; font-size: 78px; }
+    .product-info { padding: 14px; }
+    .product-info h3 { margin: 0 0 3px; font-size: 15px; }
+    .product-info p { min-height: 38px; margin: 0 0 13px; color: var(--muted); font-size: 12px; }
+    .product-bottom { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+    .product-price { font-size: 14px; font-weight: 700; }
+    .add-button {
+      padding: 8px 10px;
+      border: 0;
+      border-radius: 6px;
+      background: #32634a;
+      color: #fff;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 650;
+    }
+    .cart-note { min-height: 20px; margin: 8px 0 0; color: #32634a; font-size: 12px; }
+    footer { padding: 18px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+
+    @media (max-width: 560px) {
+      header { align-items: flex-start; flex-direction: column; }
+      .shop-nav { width: 100%; justify-content: space-between; gap: 10px; }
+      .shop-nav a { font-size: 12px; }
+      .hero { grid-template-columns: 1fr; gap: 4px; }
+      .hero-art { min-height: 100px; }
+      .product-art { min-height: 145px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand"><span class="brand-mark" aria-hidden="true">g</span> good goods</div>
+      <nav class="shop-nav" aria-label="Main navigation">
+        <a href="#shop">Shop</a><a href="#story">Our story</a><a href="#footer">Contact</a>
+        <button id="cart-button" class="cart-button" type="button">Bag <span id="cart-count">0</span></button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="story" aria-labelledby="hero-title">
+        <div>
+          <div class="eyebrow">Thoughtful things for everyday</div>
+          <h1 id="hero-title">A little more good in your day.</h1>
+          <p class="hero-copy">Useful, well-made essentials for home, work, and wherever the day takes you. Better basics, made to last.</p>
+          <a class="shop-cta" href="#shop">Find your everyday</a>
+        </div>
+        <div class="hero-art" aria-hidden="true">🌿</div>
+      </section>
+
+      <section id="shop" aria-labelledby="shop-title">
+        <div class="toolbar shop-toolbar">
+          <div><div class="eyebrow">The good edit</div><h2 id="shop-title">Everyday favourites</h2></div>
+          <label class="filter">Search <input id="filter" type="search" placeholder="Find something good…" autocomplete="off"></label>
+        </div>
+        <div id="products" class="product-grid" aria-live="polite"></div>
+        <p id="cart-note" class="cart-note" aria-live="polite"></p>
+      </section>
+
+    </main>
+    <footer id="footer">Good Goods · Thoughtful essentials for everyday</footer>
+  </div>
+
+  <script>
+    "use strict";
+
+    const productsElement = document.querySelector("#products");
+    const cartNote = document.querySelector("#cart-note");
+    const products = [
+      { name: "Sunday ceramic mug", category: "Home · Kitchen", description: "Hand-finished stoneware for slow mornings.", price: 24, art: "☕", color: "#eee7db" },
+      { name: "Everywhere tote", category: "Carry · Everyday", description: "Roomy recycled canvas, made for the daily carry.", price: 32, art: "👜", color: "#e8e9df" },
+      { name: "Soft-knit throw", category: "Home · Comfort", description: "A soft, breathable layer for cosy evenings.", price: 68, art: "🧶", color: "#eee4e0" },
+      { name: "Field notes set", category: "Work · Paper", description: "Three pocket notebooks for all your good ideas.", price: 16, art: "📓", color: "#e2e9e4" },
+      { name: "Daily water bottle", category: "Carry · Reusable", description: "Double-wall stainless steel, 500 ml.", price: 38, art: "🧴", color: "#e1e9ec" },
+      { name: "Little desk lamp", category: "Home · Lighting", description: "A warm pool of light for your favourite corner.", price: 54, art: "💡", color: "#f0eadb" }
+    ];
+    let cartCount = 0;
+
+    function renderProducts(searchText) {
+      const query = searchText.trim().toLowerCase();
+      const visible = products.filter((product) => `${product.name} ${product.category} ${product.description}`.toLowerCase().includes(query));
+      productsElement.replaceChildren();
+      for (const product of visible) {
+        const card = document.createElement("article");
+        card.className = "product-card";
+        const art = document.createElement("div");
+        art.className = "product-art";
+        art.style.background = product.color;
+        art.setAttribute("aria-hidden", "true");
+        art.textContent = product.art;
+        const info = document.createElement("div");
+        info.className = "product-info";
+        const category = document.createElement("div");
+        category.className = "eyebrow";
+        category.textContent = product.category;
+        category.style.fontSize = "10px";
+        const name = document.createElement("h3");
+        name.textContent = product.name;
+        const description = document.createElement("p");
+        description.textContent = product.description;
+        const bottom = document.createElement("div");
+        bottom.className = "product-bottom";
+        const price = document.createElement("span");
+        price.className = "product-price";
+        price.textContent = `$${product.price.toFixed(2)}`;
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "add-button";
+        button.textContent = "Add to bag";
+        button.addEventListener("click", () => {
+          cartCount += 1;
+          document.querySelector("#cart-count").textContent = String(cartCount);
+          cartNote.textContent = `${product.name} added to your bag. Your bag has ${cartCount} ${cartCount === 1 ? "item" : "items"}.`;
+        });
+        bottom.append(price, button);
+        info.append(category, name, description, bottom);
+        card.append(art, info);
+        productsElement.append(card);
+      }
+      if (visible.length === 0) {
+        const empty = document.createElement("p");
+        empty.className = "empty";
+        empty.textContent = "No products match your search.";
+        productsElement.append(empty);
+      }
+    }
+
+
+    document.querySelector("#filter").addEventListener("input", (event) => renderProducts(event.target.value));
+    document.querySelector("#cart-button").addEventListener("click", () => {
+      cartNote.textContent = cartCount ? `Your bag has ${cartCount} ${cartCount === 1 ? "item" : "items"}. Checkout is not enabled in this demo.` : "Your bag is empty. Add an everyday favourite to get started.";
+      document.querySelector("#shop").scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+    renderProducts("");
+  </script>
+</body>
+</html>
